@@ -1,0 +1,36 @@
+//一个栈的最小值
+public class MinStack {
+    Stack <Integer>stack;
+    Stack <Integer>min_stack;
+
+    public MinStack() {
+        stack=new Stack<>();
+        min_stack=new Stack<>();
+    }
+
+    public void push(int x) {
+        stack.push(x);
+        if(min_stack.empty()){
+            min_stack.push(x);
+        }else {
+            if(x>min_stack.peek()){
+                x=min_stack.peek();
+            }
+            min_stack.push(x);
+        }
+
+    }
+
+    public void pop() {
+        stack.pop();
+        min_stack.pop();
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int getMin() {
+        return min_stack.peek();
+    }
+}
