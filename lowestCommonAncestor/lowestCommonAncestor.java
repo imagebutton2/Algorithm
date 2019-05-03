@@ -38,6 +38,7 @@ public class lowestCommonAncestor {
         } else if (right != null) {
             return right;
         }
+		
         return null;
     }
 }
